@@ -1,0 +1,7 @@
+{
+  "name": "certApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

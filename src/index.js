@@ -4,11 +4,9 @@ const app = express()
 
 // use the express-static middleware
 app.use(express.static("public"))
+app.use(require('./routes/root'));
+app.use(require('./routes/getAll'));
 
-// define the first route
-app.get("/", function (req, res) {
-  res.send("<h1>CertViewerApp</h1>")
-})
 
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
