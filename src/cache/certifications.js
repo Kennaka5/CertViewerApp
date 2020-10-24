@@ -24,10 +24,8 @@ axios
     });
 
     records.forEach(r => {
-        certifications.push(r);
+      certifications.push(r);
     });
-
-    console.log(certifications);
   })
   .catch((error) => console.log(error));
 

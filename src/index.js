@@ -1,6 +1,9 @@
 // create an express app
 const express = require("express")
+const cors = require('cors')
 const app = express()
+
+app.use(cors());
 
 // use the express-static middleware
 app.use(express.static("public"))
