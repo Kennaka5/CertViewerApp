@@ -7,26 +7,35 @@ const certificationURL = `https://sheets.googleapis.com/v4/spreadsheets/1BtWFSIq
 
 const certifications = [];
 
-axios
-  .get(certificationURL)
-  .then((res) => {
-    const rawData = res.data.values;
-    //get keys for objects
-    const keys = rawData[0];
-    //remove first array and use remaining arrays as values
-    const values = rawData.slice(1);
-    //Map though array of values
-    const records = values.map((array) => {
-      const record = {};
-      //for each key set key(irrator) to record key and set the value to the irrated array value
-      keys.forEach((key, i) => (record[key] = array[i]));
-      return record;
-    });
+function getCertifications() {
+  axios
+    .get(certificationURL)
+    .then((res) => {
+      certifications.length = 0;
+      const rawData = res.data.values;
+      //get keys for objects
+      const keys = rawData[0];
+      //remove first array and use remaining arrays as values
+      const values = rawData.slice(1);
+      //Map though array of values
+      const records = values.map((array) => {
+        const record = {};
+        //for each key set key(irrator) to record key and set the value to the irrated array value
+        keys.forEach((key, i) => (record[key] = array[i]));
+        return record;
+      });
 
-    records.forEach(r => {
-      certifications.push(r);
-    });
-  })
-  .catch((error) => console.log(error));
+      records.forEach((r) => {
+        certifications.push(r);
+      });
+    })
+    .catch((error) => console.log(error));
+};
+
+getCertifications();
+
+setInterval( function(){
+  getCertifications();
+}, 60000);
 
 module.exports = certifications;
