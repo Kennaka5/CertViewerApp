@@ -19,7 +19,7 @@ const RecordSearchContainer: React.FC<ContainerProps> = () => {
   console.log(records)
   return (
     <div>
-      <IonSearchbar onIonChange={e => setRecordText(e.detail.value)}></IonSearchbar>
+      <IonSearchbar placeholder="Search by Name or Cert Number" onIonChange={e => setRecordText(e.detail.value)}></IonSearchbar>
       <IonList>
         {records && records.map((record, certNumber) => (
           <IonItem key={certNumber}>
