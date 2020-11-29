@@ -6,12 +6,14 @@ import './Home.css';
 const RecordLookup: React.FC = () => {
   return (
     <IonPage>
+
       <IonHeader>
         <IonToolbar>
           <IonTitle>Pop Neuro Certification Lookup</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+
+      <IonContent>
         <RecordSearchContainer />
       </IonContent>
     </IonPage>

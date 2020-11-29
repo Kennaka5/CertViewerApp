@@ -12,8 +12,9 @@ export interface Record {
 }
 
 export async function getRecord(query: string): Promise<Record[]> {
-
-    const RecordRequestURL = `http://localhost:3000/records.json?q=${query}`;
+//use for local host dev `http://localhost:3000/records.json?q=${query}`;
+// use for production `https://certviewerapp1.herokuapp.com/records.json?q=${query}`;
+    const RecordRequestURL = `https://certviewerapp1.herokuapp.com/records.json?q=${query}`;
     const response = await axios.get<RecordResponse>(RecordRequestURL);
     return response.data.value;
 }
