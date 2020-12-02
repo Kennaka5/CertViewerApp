@@ -1,6 +1,6 @@
-import { IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/react';
+import { IonSearchbar, IonList, IonItem, IonLabel, IonGrid, IonCol, IonRow } from '@ionic/react';
 import React, { useState } from 'react';
-import {getRecord, Record} from '../../actions/searchRecords'
+import { getRecord, Record } from '../../actions/searchRecords'
 import './ExploreContainer.css';
 
 interface ContainerProps { }
@@ -11,7 +11,7 @@ const RecordSearchContainer: React.FC<ContainerProps> = () => {
   const [records, setRecords] = useState<Record[]>([]);
 
   const setRecordText = async (query: string | undefined) => {
-    if(query) {
+    if (query) {
       const results: any = await getRecord(query);
       setRecords(results)
     }
@@ -19,7 +19,15 @@ const RecordSearchContainer: React.FC<ContainerProps> = () => {
   console.log(records)
   return (
     <div>
-      <IonSearchbar placeholder="Search by Name or Cert Number" onIonChange={e => setRecordText(e.detail.value)}></IonSearchbar>
+      <IonGrid>
+        <IonRow>
+          <IonCol sizeLg="4" size-sm-="2"></IonCol>
+          <IonCol sizeLg="4" size-sm-="8" > 
+            <IonSearchbar placeholder="Search by Name or Cert Number" onIonChange={e => setRecordText(e.detail.value)}></IonSearchbar>
+          </IonCol>
+          <IonCol sizeLg="4" size-sm-="2"></IonCol>
+        </IonRow>
+      </IonGrid>
       <IonList>
         {records && records.map((record, certNumber) => (
           <IonItem key={certNumber}>
@@ -31,7 +39,7 @@ const RecordSearchContainer: React.FC<ContainerProps> = () => {
           </IonItem>
         ))}
       </IonList>
-  </div>
+    </div>
   );
 };
 
