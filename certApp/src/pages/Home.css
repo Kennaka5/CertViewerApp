@@ -7,3 +7,17 @@
     --ion-background-color: #fff;
   }
 
+  ion-toolbar {
+    --ion-background-color: #fff;
+  }
+
+  .email-icon {
+    --ion-background-color: #222222;
+  }
+
+  ion-searchbar {
+    width: 3vh;
+  }
+
+  
+

@@ -1,6 +1,6 @@
 import { IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/react';
 import React, { useState } from 'react';
-import {getRecord, Record} from '../actions/searchRecords'
+import {getRecord, Record} from '../../actions/searchRecords'
 import './ExploreContainer.css';
 
 interface ContainerProps { }
