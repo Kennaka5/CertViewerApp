@@ -3,6 +3,23 @@
 The CertViewer App  is a record look up applicationso visitors to popneuro.com could lookup graduates from their Bootcamp.
 
 The User can search by name or certification number to check and see if the graduate exists.
+
+## Live Demo
+
+You can Check out the app online at: (https://certification.popneuro.com/)
+
+![](certViewer.gif)
+
+## Technologies Used
+
+  * React
+  * Ionic React
+  * TypeScript
+  * Express.js
+  * Axios
+  * Firebase
+  * Google Spreadsheets
+  * Heroku
  
 ## Steps to install this app  
  
